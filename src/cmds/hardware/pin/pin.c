@@ -26,7 +26,7 @@ static void print_usage(void) {
 }
 
 static int gpio_by_name(const char *name) {
-	int id;
+	int id = -1;
 
 	if (strncmp("GPIO", name, 4) && strncmp("gpio", name, 4)) {
 		return -1;
