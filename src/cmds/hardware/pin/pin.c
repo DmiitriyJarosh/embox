@@ -36,6 +36,9 @@ static int gpio_by_name(const char *name) {
 		return -1;
 	}
 	if (toupper(name[0]) >= 'A' && toupper(name[0]) <= 'Z') {
+		if (strlen(name) > 1) {
+			return -1;
+		}
 		id = toupper(name[0]) - 'A';
 	} else {
 		if (1 != sscanf(name, "%d", &id)) {
